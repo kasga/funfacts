@@ -1,0 +1,14 @@
+/node_modules/
+/build/
+/docs/
+*.DS_Store
+*.log
+*.sublime-project
+*.sublime-workspace
+config.js
+*.pem
+/.settings/
+credentials.json
+robots.txt
+wordpress/wp-content/uploads/
+/design/
