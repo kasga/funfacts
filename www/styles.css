@@ -162,6 +162,580 @@ table {
   border-collapse: collapse;
   border-spacing: 0;
 }
+.bouble-icon {
+  width: 25px;
+  height: 25px;
+  z-index: 20;
+  margin-bottom: 0px;
+  fill: white;
+}
+
+#de-container-bath {
+  position: relative;
+  display: block;
+  max-width: 966px;
+  margin: 0 auto;
+  height: 550px;
+  overflow: hidden;
+}
+
+#de-container-bath #bath-draggable-bounds {
+  position: absolute;
+  display: block;
+  height: 100%;
+  left: -50%;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+#de-container-bath #bath-you {
+  position: absolute;
+  display: block;
+  bottom: 10px;
+  right: 10px;
+  width: 130px;
+  height: 130px;
+  border-radius: 130px;
+  padding: 20px 10px 10px 10px;
+  color: white;
+  z-index: 110;
+  background-color: #0E98AE;
+  text-align: center;
+  line-height: 1.2rem;
+  font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  transition: all 200ms ease-out;
+}
+
+#de-container-bath #bath-you:hover {
+  -ms-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
+}
+
+#de-container-bath .bath-container {
+  position: relative;
+  display: block;
+  width: 55%;
+  height: 100%;
+  left: 45%;
+  cursor: pointer !important;
+}
+
+#de-container-bath .bath-container .bath-red-box {
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: block;
+  width: 100%;
+  background-color: #C30F10;
+  height: 100%;
+}
+
+#de-container-bath .bath-container .bath-red-box .arrow-circle {
+  position: absolute;
+  right: -31px;
+  top: calc(50% - 62px);
+  background-color: white;
+  width: 62px;
+  height: 62px;
+  border-radius: 60px;
+  overflow: hidden;
+  box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.75);
+  transition: transform .2s ease-out;
+}
+
+#de-container-bath .bath-container .bath-red-box .arrow-circle .arrow-gfx {
+  position: absolute;
+  top: calc(50% - 10px);
+  left: calc(50% - 14px);
+  transition: all .5s ease-out;
+}
+
+#de-container-bath .bath-container .bath-red-box .arrow-circle .arrow-gfx.arrow-indicator {
+  animation-duration: 3s;
+  animation-name: BATH_ARROW_INDICATOR;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+}
+
+#de-container-bath .bath-container .bath-red-box .arrow-circle .arrow-gfx.rotate {
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+
+#de-container-bath .bath-container .bath-red-box .arrow-circle.hover {
+  -ms-transform: scale(1.2, 1.2);
+  transform: scale(1.2, 1.2);
+}
+
+#de-container-bath .bath-container .bath-red-box.indicator {
+  animation-duration: 1s;
+  animation-name: BATH_DRAG_INDICATOR;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+#de-container-bath .bath-container .bath-content {
+  position: absolute;
+  top: 45%;
+  left: 7.5%;
+  -ms-transform: translateY(-50%);
+  transform: translateY(-50%);
+  color: white;
+  padding: 10%;
+  line-height: 3rem;
+}
+
+#de-container-bath .bath-container .bath-dragger {
+  position: absolute;
+  display: block;
+  width: 160px;
+  height: 100%;
+  right: -80px;
+}
+
+#de-container-bath #bath-video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  bottom: 0;
+  left: 22%;
+  overflow: hidden;
+  z-index: 0;
+}
+
+#de-container-bath #bath-video video {
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+}
+
+#de-container-bath #bath-bubbles {
+  position: relative;
+  z-index: 20;
+  width: 80%;
+  height: 100%;
+  margin: 50px auto;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble {
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.show {
+  display: block;
+  animation: TRANSITION_CIRCLES 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) normal forwards;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble .dotted-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  stroke: white;
+  stroke-width: 3px;
+  stroke-dasharray: 0 10px;
+  animation: DOTTED_LINE 10s linear infinite;
+  z-index: 0;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble .circle {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 110px;
+  background-color: white;
+  text-align: center;
+  padding: 25px 0;
+  z-index: 10;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.large .dotted-line {
+  stroke: #007E93;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.large .circle {
+  animation: CIRCLE_PULSING 1.5s ease-in-out infinite;
+  -ms-transform: scale(1.4, 1.4);
+  transform: scale(1.4, 1.4);
+  background-color: #007E93;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.large .region,
+#de-container-bath #bath-bubbles .bath-bubble.large .time {
+  color: white;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.large #waves {
+  fill: white;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.b1 {
+  top: 50px;
+  left: 100px;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.b1 .dotted-line {
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+  left: 20px;
+  top: 130px;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.b2 {
+  top: 200px;
+  left: 0px;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.b2 .dotted-line {
+  -ms-transform: rotate(20deg);
+  transform: rotate(20deg);
+  left: 0px;
+  top: 77px;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.b3 {
+  top: 360px;
+  left: 0px;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.b3 .dotted-line {
+  -ms-transform: rotate(0deg);
+  transform: rotate(0deg);
+  left: 0px;
+  top: 53px;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.b4 {
+  top: 50px;
+  right: 70px;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.b4 .dotted-line {
+  -ms-transform: rotate(-225deg);
+  transform: rotate(-225deg);
+  left: -135px;
+  top: 100px;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.b5 {
+  top: 200px;
+  right: 0px;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.b5 .dotted-line {
+  -ms-transform: rotate(-200deg);
+  transform: rotate(-200deg);
+  left: -105px;
+  top: 35px;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.b6 {
+  top: 360px;
+  right: 0px;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble.b6 .dotted-line {
+  -ms-transform: rotate(-180deg);
+  transform: rotate(-180deg);
+  left: -90px;
+  top: 12px;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble .region {
+  padding: 0 10px 0 10px;
+  color: black;
+  font-size: .6rem;
+  text-transform: uppercase;
+  font-family: 'FelbridgeDONGEnergyW01-XBd', Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble .time {
+  font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif;
+  font-size: 1.6rem;
+  margin-top: 7px;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble .time .minutes {
+  font-size: 1rem;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble .waves {
+  position: relative;
+  width: 40px;
+  height: 20px;
+  overflow: hidden;
+  margin: 10px auto;
+}
+
+#de-container-bath #bath-bubbles .bath-bubble .waves svg {
+  left: 0;
+  top: 0;
+  position: absolute;
+}
+#de-container-food {
+  padding-bottom: 7%;
+}
+
+#de-container-food h1 {
+  width: 100%;
+  text-align: center;
+  padding: 7% 4%;
+}
+
+#de-container-food .dish {
+  position: relative;
+  text-align: center;
+}
+
+#de-container-food .dish .dish-container {
+  position: relative;
+  display: inline-block;
+}
+
+#de-container-food .dish .dish-container .dish-img {
+  height: 400px;
+  opacity: 0;
+  margin-left: -500px;
+  transition: all 1s cubic-bezier(0.215, 0.61, 0.355, 1);
+}
+
+#de-container-food .dish .dish-container .dish-img.init-dish {
+  opacity: 1;
+  margin-left: 0;
+}
+
+#de-container-food .dish .dish-container .food-bubble {
+  position: absolute;
+  top: -30px;
+  right: -160px;
+  width: 150px;
+  opacity: 0;
+}
+
+#de-container-food .dish .dish-container .food-bubble.show {
+  display: block;
+  animation: TRANSITION_CIRCLES 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) normal forwards;
+}
+
+#de-container-food .dish .dish-container .food-bubble .dotted-line {
+  position: absolute;
+  left: -210px;
+  top: 100px;
+  stroke: black;
+  stroke-width: 3px;
+  stroke-dasharray: 0 10px;
+  animation: DOTTED_LINE 10s linear infinite;
+  z-index: 0;
+  -ms-transform: rotate(-215deg);
+  transform: rotate(-215deg);
+}
+
+#de-container-food .dish .dish-container .food-bubble .circle {
+  position: relative;
+  display: block;
+  text-align: left;
+}
+
+#de-container-food .dish .dish-container .food-bubble .pct {
+  font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif;
+  font-size: 4.5rem;
+  margin: 7px 0 10px 0;
+}
+
+#de-container-food .dish .dish-container .food-bubble .desc {
+  position: relative;
+  display: block;
+  text-align: left;
+  line-height: 1.4rem;
+}
+
+#de-container-food .dish .dish-container .food-bubble.init-bubble {
+  opacity: 1;
+  transition: opacity 1s;
+}
+
+#de-container-food #food-cta {
+  position: relative;
+  display: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 130px;
+  padding: 20px 10px 10px 10px;
+  color: white;
+  z-index: 110;
+  background-color: #0E98AE;
+  text-align: center;
+  line-height: 1.2rem;
+  font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  opacity: 0;
+}
+
+#de-container-food #food-cta.init-btn {
+  display: block;
+  animation: SCALE_UP 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+#de-container-food #food-cta-container {
+  position: absolute;
+  display: block;
+  bottom: 20px;
+  right: 10px;
+  width: 130px;
+  height: 130px;
+  transition: transform 200ms ease-out;
+}
+
+#de-container-food #food-cta-container:hover {
+  -ms-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
+}
+#de-container-livingroom {
+  position: relative;
+  display: block;
+  max-width: 966px;
+  margin: 0 auto;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+#de-container-livingroom .livingroom-bg {
+  position: absolute;
+  display: block;
+  width: 963px;
+  height: 889px;
+  top: -40px;
+  left: 0;
+  z-index: 0;
+}
+
+#de-container-livingroom .livingroom-bg img {
+  display: block;
+}
+
+#de-container-livingroom #livingroom-video {
+  position: absolute;
+  top: 227px;
+  right: 248px;
+  z-index: 10;
+  width: 347px;
+  height: 195px;
+}
+
+#de-container-livingroom .livingroom-content {
+  position: relative;
+  z-index: 10;
+}
+
+#de-container-livingroom #livingroom-cta {
+  position: absolute;
+  display: none;
+  bottom: 10px;
+  right: 10px;
+  width: 130px;
+  height: 130px;
+  border-radius: 130px;
+  padding: 20px 10px 10px 10px;
+  color: white;
+  z-index: 110;
+  background-color: #0E98AE;
+  text-align: center;
+  line-height: 1.2rem;
+  font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  transition: all 200ms ease-out;
+}
+
+#de-container-livingroom #livingroom-cta:hover {
+  -ms-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
+}
+
+#de-container-livingroom #livingroom-cta.init-btn {
+  display: block;
+  animation: SCALE_UP 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+#de-container-livingroom #livingroom-cta-container {
+  position: absolute;
+  display: block;
+  bottom: 10px;
+  right: 10px;
+  width: 130px;
+  height: 130px;
+  transition: transform 200ms ease-out;
+}
+
+#de-container-livingroom #livingroom-cta-container:hover {
+  -ms-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
+}
+
+#de-container-livingroom h1 {
+  width: 100%;
+  text-align: center;
+  padding: 7% 7%;
+}
+
+#de-container-livingroom #thermometer {
+  position: absolute;
+  top: 180px;
+  left: 20px;
+  width: 100%;
+}
+
+#de-container-livingroom #thermometer #thermometer-svg {
+  height: 270px;
+}
+
+#de-container-livingroom #thermometer .temp {
+  position: absolute;
+  display: block;
+  top: 47px;
+  left: 50px;
+  width: auto;
+}
+
+#de-container-livingroom #thermometer .temp .red-bold {
+  font-family: 'FelbridgeDONGEnergyW01-Bd', Arial, Helvetica, sans-serif;
+  color: #c30f10;
+}
+
+#de-container-livingroom #thermometer .temp.second {
+  top: 75px;
+}
+
+#de-container-livingroom #thermometer .temp.third {
+  top: 103px;
+}
+
+#de-container-livingroom #thermometer .temp.fourth {
+  top: 131px;
+}
+
+#de-container-livingroom #thermometer .temp.fifth {
+  top: 159px;
+}
+
+#de-container-livingroom #thermometer .temp .dotted-line {
+  stroke: black;
+  stroke-width: 3px;
+  stroke-dasharray: 0 10px;
+  animation: DOTTED_LINE 10s linear infinite;
+  margin-right: 10px;
+}
 body {
   font-family: 'FelbridgeDONGEnergyW01-Rg', Arial, Helvetica, sans-serif;
   font-size: 16px;
@@ -177,6 +751,15 @@ body {
 h1 {
   font-family: 'FelbridgeDONGEnergyW01-Bd', Arial, Helvetica, sans-serif;
   font-size: 2.6rem;
+  line-height: 2.8rem;
+}
+
+.bold {
+  font-family: 'FelbridgeDONGEnergyW01-Bd', Arial, Helvetica, sans-serif;
+}
+
+.hide {
+  animation: SCALE_CIRCLES 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275) normal forwards;
 }
 
 .de-container {
@@ -184,184 +767,7 @@ h1 {
   display: block;
   max-width: 966px;
   margin: 0 auto;
-  height: 80vh;
   overflow: hidden;
-  background-color: #efefef;
-}
-
-.de-container #bath-draggable-bounds {
-  position: absolute;
-  display: block;
-  height: 100%;
-  left: -50%;
-  width: 100%;
-  z-index: 10;
-}
-
-.de-container .bath-container {
-  position: relative;
-  display: none;
-  width: 55%;
-  height: 100%;
-  left: 45%;
-  cursor: pointer !important;
-}
-
-.de-container .bath-container .bath-red-box {
-  position: absolute;
-  top: 0;
-  left: 0;
-  display: block;
-  width: 100%;
-  background-color: #C30F10;
-  height: 100%;
-}
-
-.de-container .bath-container .bath-red-box .arrow-circle {
-  position: absolute;
-  right: -31px;
-  top: calc(50% - 62px);
-  background-color: white;
-  width: 62px;
-  height: 62px;
-  border-radius: 60px;
-  overflow: hidden;
-  box-shadow: 0px 0px 15px -1px rgba(0,0,0,0.75);
-  transition: transform .2s ease-out;
-}
-
-.de-container .bath-container .bath-red-box .arrow-circle .arrow-gfx {
-  position: absolute;
-  top: calc(50% - 10px);
-  left: calc(50% - 14px);
-  transition: all .5s ease-out;
-}
-
-.de-container .bath-container .bath-red-box .arrow-circle .arrow-gfx.arrow-indicator {
-  animation-duration: 3s;
-  animation-name: BATH_ARROW_INDICATOR;
-  animation-iteration-count: infinite;
-  animation-direction: normal;
-  animation-timing-function: ease-in-out;
-}
-
-.de-container .bath-container .bath-red-box .arrow-circle .arrow-gfx.rotate {
-  -ms-transform: rotate(180deg);
-  transform: rotate(180deg);
-}
-
-.de-container .bath-container .bath-red-box .arrow-circle.hover {
-  -ms-transform: scale(1.2, 1.2);
-  transform: scale(1.2, 1.2);
-}
-
-.de-container .bath-container .bath-red-box.indicator {
-  animation-duration: 1s;
-  animation-name: BATH_DRAG_INDICATOR;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
-}
-
-.de-container .bath-container .bath-content {
-  position: absolute;
-  top: 45%;
-  left: 7.5%;
-  -ms-transform: translateY(-50%);
-  transform: translateY(-50%);
-  color: white;
-  padding: 10%;
-  line-height: 3rem;
-}
-
-.de-container .bath-container .bath-dragger {
-  position: absolute;
-  display: block;
-  width: 160px;
-  height: 100%;
-  right: -80px;
-}
-
-.de-container #bath-video {
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  bottom: 0;
-  left: 0;
-  overflow: hidden;
-}
-
-.de-container #bath-video video {
-  min-width: 100%;
-  min-height: 100%;
-  width: auto;
-  height: auto;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  -ms-transform: translate(-50%, -50%);
-  transform: translate(-50%, -50%);
-}
-
-.de-container #bath-bubbles {
-  z-index: 20;
-  width: 100%;
-  height: 100%;
-}
-
-.de-container #bath-bubbles .bath-bubble {
-  position: absolute;
-  display: block;
-  width: 110px;
-  height: 110px;
-  border-radius: 110px;
-  background-color: white;
-  text-align: center;
-  padding: 25px 0;
-}
-
-.de-container #bath-bubbles .bath-bubble.b1 {
-  top: 100px;
-  left: 170px;
-}
-
-.de-container #bath-bubbles .bath-bubble.b2 {
-  top: 250px;
-  left: 120px;
-}
-
-.de-container #bath-bubbles .bath-bubble .region {
-  padding: 0 10px 0 10px;
-  color: black;
-  font-size: .6rem;
-  text-transform: uppercase;
-  font-family: 'FelbridgeDONGEnergyW01-XBd', Arial, Helvetica, sans-serif;
-  text-align: center;
-}
-
-.de-container #bath-bubbles .bath-bubble .time {
-  font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif;
-  font-size: 1.6rem;
-  margin-top: 7px;
-}
-
-.de-container #bath-bubbles .bath-bubble .time .minutes {
-  font-size: 1rem;
-}
-
-.de-container #bath-bubbles .bath-bubble .waves {
-  position: relative;
-  width: 40px;
-  height: 20px;
-  overflow: hidden;
-  margin: 10px auto;
-}
-
-.de-container #bath-bubbles .bath-bubble .waves svg {
-  left: 0;
-  top: 0;
-  position: absolute;
-  animation: WAVES 4s linear infinite;
 }
 
 @keyframes BATH_DRAG_INDICATOR {
@@ -396,12 +802,62 @@ h1 {
   }
 }
 
-@keyframes WAVES {
-  0 {
-    left: 0px;
+@keyframes DOTTED_LINE {
+  to {
+    stroke-dashoffset: 500;
+  }
+}
+
+@keyframes TRANSITION_CIRCLES {
+  0% {
+    opacity: 0;
+    transform: scale(0.5, 0.5);
+  }
+
+  60% {
+
   }
 
   100% {
-    left: -50px;
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes SCALE_CIRCLES {
+  0% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+}
+
+@keyframes SCALE_UP {
+  0% {
+    opacity: 0;
+    transform: scale(0, 0);
+  }
+
+  100% {
+    opacity: 1;
+    transform: scale(1, 1);
+  }
+}
+
+@keyframes CIRCLE_PULSING {
+  0 {
+    transform: scale(1.4, 1.4);
+  }
+
+  50% {
+    transform: scale(1.5, 1.5);
+  }
+
+  100% {
+    transform: scale(1.4, 1.4);
   }
 }

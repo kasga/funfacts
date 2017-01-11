@@ -1,0 +1,120 @@
+#de-container-food{
+
+	padding-bottom: 7%;
+
+	h1{
+		width: 100%;
+		text-align: center;
+		padding: 7% 4%;
+	}	
+
+	.dish{
+		position:relative;
+		text-align: center;
+
+		.dish-container{
+			position:relative;
+			display:inline-block;
+
+			.dish-img{
+				height:400px; 
+				opacity: 0;
+				margin-left: -500px;
+				transition: all 1s cubic-bezier(0.215, 0.610, 0.355, 1.000);					
+
+				&.init-dish{
+					opacity: 1;
+					margin-left: 0;
+				}
+			}
+
+			.food-bubble{
+				position:absolute;
+				top:-30px;
+				right:-160px;
+				width:150px;
+				opacity: 0;
+
+				&.show{
+					display:block;
+					animation: TRANSITION_CIRCLES 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) normal forwards;
+				}
+
+				.dotted-line{
+					position:absolute;
+					left:-210px;
+					top:100px;
+					stroke:black;
+					stroke-width:3px;
+					stroke-dasharray:0 10px;
+					animation: DOTTED_LINE 10s linear infinite;
+					z-index: 0;
+					transform:rotate(-215deg);
+				}
+
+				.circle{
+					position: relative;
+					display:block;
+					text-align:left;
+
+				}
+
+				.pct{
+					font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif;
+					font-size: 4.5rem;
+					margin: 7px 0 10px 0;
+				}
+
+				.desc{
+					position: relative;
+					display:block;
+					text-align:left;
+					line-height: 1.4rem;
+				}
+
+				&.init-bubble{
+					opacity: 1;
+					transition: opacity 1s;
+				}
+			}
+
+		}
+	}
+
+	#food-cta{
+		position: relative;
+		display: none;
+		width: 100%;
+		height: 100%;
+		border-radius: 130px;
+		padding:20px 10px 10px 10px;
+		color:white;
+		z-index: 110;
+		background-color: #0E98AE;
+		text-align: center;
+		line-height: 1.2rem;
+		font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif; 
+		text-decoration: none;
+		opacity: 0;
+		
+
+		&.init-btn{
+			display:block;
+			animation: SCALE_UP 250ms cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards;
+		}
+	}
+
+	#food-cta-container{
+		position:absolute;
+		display:block;
+		bottom: 20px;
+		right:10px;
+		width:130px;
+		height:130px;
+		transition: transform 200ms ease-out;
+
+		&:hover{
+			transform: scale(1.05, 1.05) ;
+		}
+	}
+}
