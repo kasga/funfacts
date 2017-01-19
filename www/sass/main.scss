@@ -2,6 +2,10 @@ body{
 	font-family: 'FelbridgeDONGEnergyW01-Rg', Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	box-sizing: border-box;
+	opacity:0;
+	animation: INIT_PAGE 1s normal forwards;
+
+	
 }
 
 
@@ -12,8 +16,12 @@ body{
 
 h1{
 	font-family: 'FelbridgeDONGEnergyW01-Bd', Arial, Helvetica, sans-serif;
-	font-size: 2.6rem;
-	line-height: 2.8rem;
+	font-size: 3rem;
+	line-height: 3.2rem;
+	width:70%;
+	margin: 0 auto;
+	text-align: center;
+	padding: 7% 7%;
 }
 
 .bold{
@@ -34,6 +42,15 @@ h1{
 
 
 
+// INIT
+@keyframes INIT_PAGE {
+ 75%{
+ 	opacity:0;
+ }
+ 100%{
+ 	opacity:1;
+ }
+}
 
 
 
@@ -131,4 +148,63 @@ h1{
   100%{
     transform: scale(1.4, 1.4);
   }
+}
+
+
+@keyframes PULSATE {
+  0{
+  		filter: drop-shadow(0px 0px 10px rgba(195, 15, 16, 0));	
+  }
+
+  50%{
+  		filter: drop-shadow(0px 0px 10px rgba(195, 15, 16, 1));	
+  }
+
+  100%{
+  		filter: drop-shadow(0px 0px 10px rgba(195, 15, 16, 0));	
+  }
+}
+
+
+
+
+
+
+
+
+/* TABLET */
+
+@media only screen 
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  	h1{
+		padding: 7%;
+	}
+}
+
+
+
+
+
+
+
+
+
+// MOBILE
+@media only screen 
+  and (max-device-width: 767px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  	body{
+		font-size: 14px;
+	}
+
+  	h1{
+  		font-size: 2rem;
+  		line-height: 2.2rem;
+  		width: 100%;
+  	}
+
 }

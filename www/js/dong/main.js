@@ -4,14 +4,72 @@ var arrowGfx;
 var videoElement;
 var videoX;
 var bathLeftBoxState = "in";
+var dataURL = "data.json";
+
+// Food
+var foodNum;
+var foodFormat;
 
 
 
 $(document).ready(function() {
+	loadData();
+});
+
+
+function loadData() {
+	$.ajax({
+		dataType: "json",
+		url: dataURL,
+		success: handleData
+	});
+}
+
+
+function handleData(data) {
+
+	// HANDLEBARS
+
+	// BATH
+	var bathData = data.bath;
+	var bathTemplateMarkup = $("#hb-bath").html();
+	var bathTemplate = Handlebars.compile(bathTemplateMarkup);
+	var bathCompiledHtml = bathTemplate(bathData);
+	$('#de-container-bath').html(bathCompiledHtml);
+
+	// BATH
+	var foodData = data.food;
+	foodFormat = foodData.format;
+	foodNum = foodData.number;
+	var foodTemplateMarkup = $("#hb-food").html();
+	var foodTemplate = Handlebars.compile(foodTemplateMarkup);
+	var foodCompiledHtml = foodTemplate(foodData);
+	$('#de-container-food').html(foodCompiledHtml);
+
+	// LIVING ROOM
+	var livingroomData = data.livingroom;
+	var livingroomTemplateMarkup = $("#hb-livingroom").html();
+	var livingroomTemplate = Handlebars.compile(livingroomTemplateMarkup);
+	var livingroomCompiledHtml = livingroomTemplate(livingroomData);
+	$('#de-container-livingroom').html(livingroomCompiledHtml);
+
+	// STANDBY
+	var standbyData = data.standby;
+	var standbyTemplateMarkup = $("#hb-standby").html();
+	var standbyTemplate = Handlebars.compile(standbyTemplateMarkup);
+	var standbyCompiledHtml = standbyTemplate(standbyData);
+	$('#de-container-standby').html(standbyCompiledHtml);
+
+
+	// Inits the different sections
 	bathInit();
 	initFood();
 	initLivingRoom();
-});
+	initStandby();
+
+	// Init mobile
+	initMobile();
+}
 
 
 
@@ -145,7 +203,7 @@ function initFood() {
 	inView.offset(500);
 	inView('#de-container-food').once('enter', function() {
 		TweenMax.to(pct, 4, {
-			num: "+=29",
+			num: "+=" + foodNum,
 			delay: .7,
 			onStart: showPctCounter,
 			onUpdate: foodUpdateCounter,
@@ -159,7 +217,7 @@ function initFood() {
 
 function foodUpdateCounter() {
 	// var randomNumberTwoDigits = Math.floor(Math.random() * 90 + 10);
-	$('#de-container-food .pct').html(Math.ceil(pct.num) + "%");
+	$('#de-container-food .pct').html(Math.ceil(pct.num) + foodFormat);
 }
 
 function showPctCounter() {
@@ -168,14 +226,14 @@ function showPctCounter() {
 }
 
 function initFoodCTA() {
-	$('#food-cta').addClass('init-btn');
+	$('.food-cta.desktop').addClass('init-btn');
 }
 
 
 
 //LIVING ROOM
 function initLivingRoom() {
-	inView.offset(500);
+	inView.offset(600);
 	inView('#de-container-livingroom').once('enter', function() {
 
 		var video = document.getElementById('livingroom-video');
@@ -188,4 +246,24 @@ function initLivingRoom() {
 
 function initLivingroomCTA() {
 	$('#livingroom-cta').addClass('init-btn');
+}
+
+
+
+// STANDBY
+function initStandby() {
+	inView.offset(600);
+	inView('#de-container-standby').once('enter', function() {
+		$('.standby-bubble').each(function(index) {
+			setTimeout(function() {
+				$('.standby-bubble').eq(index).addClass('show');
+			}, Math.random() * 1000);
+		})
+
+		setTimeout(initStandbyCTA, 1000);
+	});
+}
+
+function initStandbyCTA() {
+	$('.standby-cta').addClass('init-btn');
 }

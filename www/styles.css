@@ -177,6 +177,15 @@ table {
   margin: 0 auto;
   height: 550px;
   overflow: hidden;
+  background-color: #eaeaea;
+}
+
+#de-container-bath h1 {
+  width: 100%;
+  font-size: 2.6rem;
+  line-height: 3rem;
+  text-align: left;
+  padding: 0;
 }
 
 #de-container-bath #bath-draggable-bounds {
@@ -192,7 +201,7 @@ table {
 #de-container-bath #bath-you {
   position: absolute;
   display: block;
-  bottom: 10px;
+  top: 10px;
   right: 10px;
   width: 130px;
   height: 130px;
@@ -232,7 +241,23 @@ table {
   height: 100%;
 }
 
-#de-container-bath .bath-container .bath-red-box .arrow-circle {
+#de-container-bath .bath-container .bath-red-box.indicator {
+  animation-duration: 1s;
+  animation-name: BATH_DRAG_INDICATOR;
+  animation-iteration-count: infinite;
+  animation-direction: alternate;
+  animation-timing-function: ease-in-out;
+}
+
+#de-container-bath .bath-container .bath-dragger {
+  position: absolute;
+  display: block;
+  width: 160px;
+  height: 100%;
+  right: -80px;
+}
+
+#de-container-bath .arrow-circle {
   position: absolute;
   right: -31px;
   top: calc(50% - 62px);
@@ -245,14 +270,14 @@ table {
   transition: transform .2s ease-out;
 }
 
-#de-container-bath .bath-container .bath-red-box .arrow-circle .arrow-gfx {
+#de-container-bath .arrow-circle .arrow-gfx {
   position: absolute;
   top: calc(50% - 10px);
   left: calc(50% - 14px);
   transition: all .5s ease-out;
 }
 
-#de-container-bath .bath-container .bath-red-box .arrow-circle .arrow-gfx.arrow-indicator {
+#de-container-bath .arrow-circle .arrow-gfx.arrow-indicator {
   animation-duration: 3s;
   animation-name: BATH_ARROW_INDICATOR;
   animation-iteration-count: infinite;
@@ -260,25 +285,21 @@ table {
   animation-timing-function: ease-in-out;
 }
 
-#de-container-bath .bath-container .bath-red-box .arrow-circle .arrow-gfx.rotate {
+#de-container-bath .arrow-circle .arrow-gfx.rotate {
   -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
-#de-container-bath .bath-container .bath-red-box .arrow-circle.hover {
+#de-container-bath .arrow-circle.hover {
   -ms-transform: scale(1.2, 1.2);
   transform: scale(1.2, 1.2);
 }
 
-#de-container-bath .bath-container .bath-red-box.indicator {
-  animation-duration: 1s;
-  animation-name: BATH_DRAG_INDICATOR;
-  animation-iteration-count: infinite;
-  animation-direction: alternate;
-  animation-timing-function: ease-in-out;
+#de-container-bath .arrow-circle.mobile {
+  display: none;
 }
 
-#de-container-bath .bath-container .bath-content {
+#de-container-bath .bath-content {
   position: absolute;
   top: 45%;
   left: 7.5%;
@@ -287,14 +308,6 @@ table {
   color: white;
   padding: 10%;
   line-height: 3rem;
-}
-
-#de-container-bath .bath-container .bath-dragger {
-  position: absolute;
-  display: block;
-  width: 160px;
-  height: 100%;
-  right: -80px;
 }
 
 #de-container-bath #bath-video {
@@ -317,6 +330,10 @@ table {
   left: 50%;
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
+}
+
+#de-container-bath .arrow-circle.back {
+  display: none;
 }
 
 #de-container-bath #bath-bubbles {
@@ -342,6 +359,7 @@ table {
   position: absolute;
   left: 0;
   top: 0;
+  overflow: hidden;
   stroke: white;
   stroke-width: 3px;
   stroke-dasharray: 0 10px;
@@ -361,14 +379,14 @@ table {
 }
 
 #de-container-bath #bath-bubbles .bath-bubble.large .dotted-line {
-  stroke: #007E93;
+  stroke: #A6B11F;
 }
 
 #de-container-bath #bath-bubbles .bath-bubble.large .circle {
   animation: CIRCLE_PULSING 1.5s ease-in-out infinite;
   -ms-transform: scale(1.4, 1.4);
   transform: scale(1.4, 1.4);
-  background-color: #007E93;
+  background-color: #A6B11F;
 }
 
 #de-container-bath #bath-bubbles .bath-bubble.large .region,
@@ -380,72 +398,72 @@ table {
   fill: white;
 }
 
-#de-container-bath #bath-bubbles .bath-bubble.b1 {
+#de-container-bath #bath-bubbles .bath-bubble.b0 {
   top: 50px;
   left: 100px;
 }
 
-#de-container-bath #bath-bubbles .bath-bubble.b1 .dotted-line {
+#de-container-bath #bath-bubbles .bath-bubble.b0 .dotted-line {
   -ms-transform: rotate(45deg);
   transform: rotate(45deg);
   left: 20px;
   top: 130px;
 }
 
-#de-container-bath #bath-bubbles .bath-bubble.b2 {
+#de-container-bath #bath-bubbles .bath-bubble.b1 {
   top: 200px;
   left: 0px;
 }
 
-#de-container-bath #bath-bubbles .bath-bubble.b2 .dotted-line {
+#de-container-bath #bath-bubbles .bath-bubble.b1 .dotted-line {
   -ms-transform: rotate(20deg);
   transform: rotate(20deg);
   left: 0px;
   top: 77px;
 }
 
-#de-container-bath #bath-bubbles .bath-bubble.b3 {
+#de-container-bath #bath-bubbles .bath-bubble.b2 {
   top: 360px;
   left: 0px;
 }
 
-#de-container-bath #bath-bubbles .bath-bubble.b3 .dotted-line {
+#de-container-bath #bath-bubbles .bath-bubble.b2 .dotted-line {
   -ms-transform: rotate(0deg);
   transform: rotate(0deg);
   left: 0px;
   top: 53px;
 }
 
-#de-container-bath #bath-bubbles .bath-bubble.b4 {
+#de-container-bath #bath-bubbles .bath-bubble.b3 {
   top: 50px;
   right: 70px;
 }
 
-#de-container-bath #bath-bubbles .bath-bubble.b4 .dotted-line {
+#de-container-bath #bath-bubbles .bath-bubble.b3 .dotted-line {
   -ms-transform: rotate(-225deg);
   transform: rotate(-225deg);
   left: -135px;
   top: 100px;
 }
 
-#de-container-bath #bath-bubbles .bath-bubble.b5 {
+#de-container-bath #bath-bubbles .bath-bubble.b4 {
   top: 200px;
   right: 0px;
 }
 
-#de-container-bath #bath-bubbles .bath-bubble.b5 .dotted-line {
+#de-container-bath #bath-bubbles .bath-bubble.b4 .dotted-line {
   -ms-transform: rotate(-200deg);
   transform: rotate(-200deg);
   left: -105px;
   top: 35px;
 }
 
-#de-container-bath #bath-bubbles .bath-bubble.b6 {
+#de-container-bath #bath-bubbles .bath-bubble.b5 {
   top: 360px;
   right: 0px;
 }
 
-#de-container-bath #bath-bubbles .bath-bubble.b6 .dotted-line {
+#de-container-bath #bath-bubbles .bath-bubble.b5 .dotted-line {
   -ms-transform: rotate(-180deg);
   transform: rotate(-180deg);
   left: -90px;
@@ -484,16 +502,119 @@ table {
   top: 0;
   position: absolute;
 }
-#de-container-food {
-  padding-bottom: 7%;
-}
 
-#de-container-food h1 {
-  width: 100%;
-  text-align: center;
-  padding: 7% 4%;
-}
+@media only screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+  #de-container-bath {
+    height: 100vh;
+    background: url("images/bath.jpg") center center no-repeat;
+    background-size: cover;
+  }
 
+  #de-container-bath h1 {
+    font-size: 2rem;
+    line-height: 2.2rem;
+  }
+
+  #de-container-bath #bath-draggable-bounds {
+    left: -100vw;
+    width: 200vw;
+  }
+
+  #de-container-bath .bath-container {
+    left: 50%;
+    width: 50%;
+  }
+
+  #de-container-bath .bath-container .bath-red-box .arrow-circle {
+    position: relative;
+  }
+
+  #de-container-bath .bath-container .bath-red-box .desktop {
+    display: none;
+  }
+
+  #de-container-bath .bath-container .bath-content {
+    top: 50%;
+    left: 3%;
+  }
+
+  #de-container-bath .bath-container .bath-content .mobile {
+    position: relative;
+    display: block;
+    left: 0;
+    top: 0;
+    margin-top: 20px;
+    -ms-transform: rotate(180deg);
+    transform: rotate(180deg);
+  }
+
+  #de-container-bath #bath-you {
+    width: 120px;
+    height: 120px;
+  }
+
+  #de-container-bath #bath-bubbles {
+    width: 100%;
+    height: 100vh;
+    margin-top: 0;
+  }
+
+  #de-container-bath #bath-bubbles .circle {
+    -ms-transform: scale(1.3, 1.3);
+    transform: scale(1.3, 1.3);
+  }
+
+  #de-container-bath #bath-bubbles .bath-bubble.b0 {
+    top: 6%;
+    left: 8%;
+  }
+
+  #de-container-bath #bath-bubbles .bath-bubble.b1 {
+    top: 34%;
+    left: 8%;
+  }
+
+  #de-container-bath #bath-bubbles .bath-bubble.b2 {
+    top: 62%;
+    left: 8%;
+  }
+
+  #de-container-bath #bath-bubbles .bath-bubble.b3 {
+    top: 6%;
+    right: 8%;
+  }
+
+  #de-container-bath #bath-bubbles .bath-bubble.b4 {
+    top: 34%;
+    right: 8%;
+  }
+
+  #de-container-bath #bath-bubbles .bath-bubble.b5 {
+    top: 62%;
+    right: 8%;
+  }
+
+  #de-container-bath #bath-bubbles .bath-bubble .dotted-line {
+    display: none;
+  }
+
+  #de-container-bath #bath-bubbles .bath-bubble.large .circle {
+    animation: 0;
+    -ms-transform: scale(1.3, 1.3);
+    transform: scale(1.3, 1.3);
+  }
+
+  #de-container-bath .arrow-circle.back {
+    position: absolute;
+    display: block;
+    top: auto;
+    bottom: 4vw;
+    left: 4vw;
+    background-color: #C30F10;
+    -ms-transform: scale(0.9, 0.9) rotate(180deg);
+    transform: scale(0.9, 0.9) rotate(180deg);
+  }
+}
 #de-container-food .dish {
   position: relative;
   text-align: center;
@@ -518,7 +639,7 @@ table {
 
 #de-container-food .dish .dish-container .food-bubble {
   position: absolute;
-  top: -30px;
+  top: 0px;
   right: -160px;
   width: 150px;
   opacity: 0;
@@ -531,15 +652,16 @@ table {
 
 #de-container-food .dish .dish-container .food-bubble .dotted-line {
   position: absolute;
+  overflow: hidden;
   left: -210px;
-  top: 100px;
+  top: 85px;
   stroke: black;
   stroke-width: 3px;
   stroke-dasharray: 0 10px;
   animation: DOTTED_LINE 10s linear infinite;
   z-index: 0;
-  -ms-transform: rotate(-215deg);
-  transform: rotate(-215deg);
+  -ms-transform: rotate(-205deg);
+  transform: rotate(-205deg);
 }
 
 #de-container-food .dish .dish-container .food-bubble .circle {
@@ -566,7 +688,7 @@ table {
   transition: opacity 1s;
 }
 
-#de-container-food #food-cta {
+#de-container-food .food-cta {
   position: relative;
   display: none;
   width: 100%;
@@ -583,24 +705,87 @@ table {
   opacity: 0;
 }
 
-#de-container-food #food-cta.init-btn {
+#de-container-food .food-cta.init-btn {
   display: block;
   animation: SCALE_UP 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
 }
 
-#de-container-food #food-cta-container {
+#de-container-food .food-cta-container {
   position: absolute;
   display: block;
-  bottom: 20px;
+  top: 10px;
   right: 10px;
   width: 130px;
   height: 130px;
   transition: transform 200ms ease-out;
 }
 
-#de-container-food #food-cta-container:hover {
+#de-container-food .food-cta-container:hover {
   -ms-transform: scale(1.05, 1.05);
   transform: scale(1.05, 1.05);
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  #de-container-food .dish .dish-container .food-bubble {
+    right: -100px;
+    top: -80px;
+  }
+
+  #de-container-food .dish .dish-container .food-bubble .dotted-line {
+    left: -190px;
+    top: 125px;
+    -ms-transform: rotate(-230deg);
+    transform: rotate(-230deg);
+  }
+}
+
+@media only screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+  #de-container-food .dish {
+    margin-top: 8%;
+  }
+
+  #de-container-food .dish .dish-container .dish-img {
+    opacity: 1;
+    height: 250px;
+    margin-left: 0;
+  }
+
+  #de-container-food .dish .dish-container .food-bubble {
+    position: relative;
+    opacity: 1;
+    right: auto;
+    top: auto;
+    width: 100%;
+    padding: 7%;
+  }
+
+  #de-container-food .dish .dish-container .food-bubble .dotted-line {
+    display: none;
+  }
+
+  #de-container-food .dish .dish-container .food-bubble .pct {
+    display: none;
+  }
+
+  #de-container-food .dish .dish-container .food-bubble .desc {
+    text-align: center;
+  }
+
+  #de-container-food .dish .dish-container .food-bubble .pct-mobile {
+    font-family: 'FelbridgeDONGEnergyW01-Bd', Arial, Helvetica, sans-serif;
+    font-size: 2rem;
+  }
+
+  #de-container-food .food-cta-container.mobile {
+    width: 120px;
+    height: 120px;
+    top: -30px;
+  }
+
+  #de-container-food .food-cta-container.mobile .food-cta {
+    display: block;
+    opacity: 1;
+  }
 }
 #de-container-livingroom {
   position: relative;
@@ -627,11 +812,11 @@ table {
 
 #de-container-livingroom #livingroom-video {
   position: absolute;
-  top: 227px;
-  right: 248px;
+  top: 273px;
+  right: 219px;
   z-index: 10;
-  width: 347px;
-  height: 195px;
+  width: 307px;
+  height: 174px;
 }
 
 #de-container-livingroom .livingroom-content {
@@ -642,8 +827,8 @@ table {
 #de-container-livingroom #livingroom-cta {
   position: absolute;
   display: none;
-  bottom: 10px;
-  right: 10px;
+  top: 0px;
+  left: 0px;
   width: 130px;
   height: 130px;
   border-radius: 130px;
@@ -671,11 +856,12 @@ table {
 #de-container-livingroom #livingroom-cta-container {
   position: absolute;
   display: block;
-  bottom: 10px;
-  right: 10px;
+  top: 20px;
+  right: 20px;
   width: 130px;
   height: 130px;
-  transition: transform 200ms ease-out;
+  z-index: 10;
+  transition: transform 200ms ease-out !important;
 }
 
 #de-container-livingroom #livingroom-cta-container:hover {
@@ -683,16 +869,10 @@ table {
   transform: scale(1.05, 1.05);
 }
 
-#de-container-livingroom h1 {
-  width: 100%;
-  text-align: center;
-  padding: 7% 7%;
-}
-
 #de-container-livingroom #thermometer {
   position: absolute;
   top: 180px;
-  left: 20px;
+  left: 40px;
   width: 100%;
 }
 
@@ -703,7 +883,6 @@ table {
 #de-container-livingroom #thermometer .temp {
   position: absolute;
   display: block;
-  top: 47px;
   left: 50px;
   width: auto;
 }
@@ -713,33 +892,83 @@ table {
   color: #c30f10;
 }
 
-#de-container-livingroom #thermometer .temp.second {
+#de-container-livingroom #thermometer .temp.t0 {
+  top: 47px;
+}
+
+#de-container-livingroom #thermometer .temp.t1 {
   top: 75px;
 }
 
-#de-container-livingroom #thermometer .temp.third {
+#de-container-livingroom #thermometer .temp.t2 {
   top: 103px;
 }
 
-#de-container-livingroom #thermometer .temp.fourth {
+#de-container-livingroom #thermometer .temp.t3 {
   top: 131px;
 }
 
-#de-container-livingroom #thermometer .temp.fifth {
+#de-container-livingroom #thermometer .temp.t4 {
   top: 159px;
 }
 
 #de-container-livingroom #thermometer .temp .dotted-line {
   stroke: black;
   stroke-width: 3px;
+  overflow: hidden;
   stroke-dasharray: 0 10px;
+  -ms-transform: rotate(180deg);
+  transform: rotate(180deg);
   animation: DOTTED_LINE 10s linear infinite;
   margin-right: 10px;
+}
+
+@media only screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+  #de-container-livingroom {
+    height: 100vh;
+    min-height: auto;
+  }
+
+  #de-container-livingroom .livingroom-bg {
+    top: 0;
+    left: -160px;
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  #de-container-livingroom .livingroom-bg img {
+    height: 100%;
+  }
+
+  #de-container-livingroom #thermometer {
+    left: -20px;
+  }
+
+  #de-container-livingroom #thermometer .temp .dotted-line {
+    animation: DOTTED_LINE 0;
+  }
+
+  #de-container-livingroom #livingroom-cta-container {
+    right: 10px;
+    top: auto;
+    bottom: 10px;
+    width: 120px;
+    height: 120px;
+  }
+
+  #de-container-livingroom #livingroom-cta {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+  }
 }
 body {
   font-family: 'FelbridgeDONGEnergyW01-Rg', Arial, Helvetica, sans-serif;
   font-size: 16px;
   box-sizing: border-box;
+  opacity: 0;
+  animation: INIT_PAGE 1s normal forwards;
 }
 
 *,
@@ -750,8 +979,12 @@ body {
 
 h1 {
   font-family: 'FelbridgeDONGEnergyW01-Bd', Arial, Helvetica, sans-serif;
-  font-size: 2.6rem;
-  line-height: 2.8rem;
+  font-size: 3rem;
+  line-height: 3.2rem;
+  width: 70%;
+  margin: 0 auto;
+  text-align: center;
+  padding: 7% 7%;
 }
 
 .bold {
@@ -768,6 +1001,16 @@ h1 {
   max-width: 966px;
   margin: 0 auto;
   overflow: hidden;
+}
+
+@keyframes INIT_PAGE {
+  75% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 @keyframes BATH_DRAG_INDICATOR {
@@ -859,5 +1102,346 @@ h1 {
 
   100% {
     transform: scale(1.4, 1.4);
+  }
+}
+
+@keyframes PULSATE {
+  0 {
+    -webkit-filter: drop-shadow(0px 0px 10px rgba(195,15,16,0));
+    filter: drop-shadow(0px 0px 10px rgba(195,15,16,0));
+  }
+
+  50% {
+    -webkit-filter: drop-shadow(0px 0px 10px #c30f10);
+    filter: drop-shadow(0px 0px 10px #c30f10);
+  }
+
+  100% {
+    -webkit-filter: drop-shadow(0px 0px 10px rgba(195,15,16,0));
+    filter: drop-shadow(0px 0px 10px rgba(195,15,16,0));
+  }
+}
+
+@media only screen and (min-device-width: 768px) and (max-device-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
+  h1 {
+    padding: 7%;
+  }
+}
+
+@media only screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+  body {
+    font-size: 14px;
+  }
+
+  h1 {
+    font-size: 2rem;
+    line-height: 2.2rem;
+    width: 100%;
+  }
+}
+
+#de-container-standby {
+  position: relative;
+  display: block;
+  max-width: 966px;
+  margin: 0 auto;
+  min-height: 600px;
+  overflow: hidden;
+}
+
+#de-container-standby #standby-icon {
+  margin-top: -40px;
+  text-align: center;
+  animation-duration: 2s;
+  animation-name: PULSATE;
+  animation-iteration-count: infinite;
+  animation-direction: normal;
+  animation-timing-function: ease-in-out;
+}
+
+#de-container-standby h1 {
+  margin-top: -150px;
+  width: 100%;
+}
+
+#de-container-standby #denmark {
+  position: relative;
+  width: 341px;
+  height: 430px;
+  margin: 50px auto;
+}
+
+#de-container-standby #denmark .standby-bubble {
+  position: absolute;
+  display: none;
+  opacity: 0;
+}
+
+#de-container-standby #denmark .standby-bubble.show {
+  display: block;
+  animation: TRANSITION_CIRCLES 1s cubic-bezier(0.175, 0.885, 0.32, 1.275) normal forwards;
+}
+
+#de-container-standby #denmark .standby-bubble .lightning {
+  margin-top: -13px;
+  margin-bottom: 5px;
+}
+
+#de-container-standby #denmark .standby-bubble .lightning svg {
+  fill: #FFc000;
+  width: 18px;
+}
+
+#de-container-standby #denmark .standby-bubble .region {
+  padding: 0 10px 0 10px;
+  font-size: .6rem;
+  text-transform: uppercase;
+  font-family: 'FelbridgeDONGEnergyW01-XBd', Arial, Helvetica, sans-serif;
+  text-align: center;
+}
+
+#de-container-standby #denmark .standby-bubble .pct {
+  font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif;
+  font-weight: normal;
+  font-size: 2rem;
+  margin-top: 4px;
+}
+
+#de-container-standby #denmark .standby-bubble .dotted-line {
+  position: absolute;
+  left: 0;
+  top: 0;
+  overflow: hidden;
+  stroke: #A6B11F;
+  stroke-width: 3px;
+  stroke-dasharray: 0 10px;
+  animation: DOTTED_LINE 10s linear infinite;
+  z-index: 0;
+}
+
+#de-container-standby #denmark .standby-bubble .circle {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  border-radius: 110px;
+  background-color: #A6B11F;
+  text-align: center;
+  padding: 25px 0;
+  z-index: 10;
+  color: white;
+}
+
+#de-container-standby #denmark .standby-bubble.b0 {
+  top: -50px;
+  left: -100px;
+}
+
+#de-container-standby #denmark .standby-bubble.b0 .dotted-line {
+  -ms-transform: rotate(35deg);
+  transform: rotate(35deg);
+  left: 30px;
+  top: 100px;
+}
+
+#de-container-standby #denmark .standby-bubble.b1 {
+  top: 90px;
+  left: -170px;
+}
+
+#de-container-standby #denmark .standby-bubble.b1 .dotted-line {
+  -ms-transform: rotate(5deg);
+  transform: rotate(5deg);
+  left: 80px;
+  top: 60px;
+}
+
+#de-container-standby #denmark .standby-bubble.b2 {
+  top: 230px;
+  left: -140px;
+}
+
+#de-container-standby #denmark .standby-bubble.b2 .dotted-line {
+  -ms-transform: rotate(-10deg);
+  transform: rotate(-10deg);
+  left: 40px;
+  top: 35px;
+}
+
+#de-container-standby #denmark .standby-bubble.b3 {
+  top: 350px;
+  left: 120px;
+}
+
+#de-container-standby #denmark .standby-bubble.b3 .dotted-line {
+  -ms-transform: rotate(-104deg);
+  transform: rotate(-104deg);
+  left: -25px;
+  top: -30px;
+}
+
+#de-container-standby #denmark .standby-bubble.b4 {
+  top: 230px;
+  left: 320px;
+}
+
+#de-container-standby #denmark .standby-bubble.b4 .dotted-line {
+  -ms-transform: rotate(-165deg);
+  transform: rotate(-165deg);
+  left: -90px;
+  top: -5px;
+}
+
+#de-container-standby #denmark .standby-bubble.b5 {
+  top: 90px;
+  left: 370px;
+}
+
+#de-container-standby #denmark .standby-bubble.b5 .dotted-line {
+  -ms-transform: rotate(-210deg);
+  transform: rotate(-210deg);
+  left: -110px;
+  top: 60px;
+}
+
+#de-container-standby #denmark .standby-bubble.b6 {
+  top: -50px;
+  left: 370px;
+}
+
+#de-container-standby #denmark .standby-bubble.b6 .dotted-line {
+  -ms-transform: rotate(-204deg);
+  transform: rotate(-204deg);
+  left: -70px;
+  top: 25px;
+}
+
+#de-container-standby .standby-cta {
+  position: absolute;
+  display: none;
+  top: 0px;
+  left: 0px;
+  width: 130px;
+  height: 130px;
+  border-radius: 130px;
+  padding: 20px 10px 10px 10px;
+  color: white;
+  z-index: 110;
+  background-color: #0E98AE;
+  text-align: center;
+  line-height: 1.2rem;
+  font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif;
+  text-decoration: none;
+  transition: all 200ms ease-out;
+}
+
+#de-container-standby .standby-cta:hover {
+  -ms-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
+}
+
+#de-container-standby .standby-cta.init-btn {
+  display: block;
+  animation: SCALE_UP 250ms cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+#de-container-standby .standby-cta-container {
+  position: absolute;
+  display: block;
+  top: 20px;
+  right: 20px;
+  width: 130px;
+  height: 130px;
+  z-index: 10;
+  transition: transform 200ms ease-out !important;
+}
+
+#de-container-standby .standby-cta-container:hover {
+  -ms-transform: scale(1.05, 1.05);
+  transform: scale(1.05, 1.05);
+}
+
+#de-container-standby .standby-cta-container.mobile {
+  display: none;
+}
+
+@media only screen and (max-device-width: 767px) and (-webkit-min-device-pixel-ratio: 2) {
+  #de-container-standby #standby-icon {
+    margin-top: -60px;
+  }
+
+  #de-container-standby h1 {
+    margin-top: -130px;
+    padding-bottom: 0;
+  }
+
+  #de-container-standby #denmark {
+    margin: 0 auto;
+    text-align: center;
+    width: 100%;
+    height: 100%;
+    padding: 7%;
+    text-align: center;
+  }
+
+  #de-container-standby #denmark img {
+    width: 50%;
+    height: auto;
+    display: none;
+  }
+
+  #de-container-standby #denmark .standby-bubble {
+    position: relative;
+    top: auto !important;
+    left: auto !important;
+    right: auto !important;
+    bottom: auto !important;
+    display: inline-block;
+    opacity: 1;
+    width: 110px;
+    margin: 3%;
+  }
+
+  #de-container-standby #denmark .standby-bubble .region {
+    padding: 0 10px 0 10px;
+    font-size: .6rem;
+    text-transform: uppercase;
+    font-family: 'FelbridgeDONGEnergyW01-XBd', Arial, Helvetica, sans-serif;
+    text-align: center;
+  }
+
+  #de-container-standby #denmark .standby-bubble .pct {
+    font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif;
+    font-weight: normal;
+    font-size: 2rem;
+    margin-top: 4px;
+  }
+
+  #de-container-standby #denmark .standby-bubble .dotted-line {
+    display: none;
+  }
+
+  #de-container-standby .standby-cta-container {
+    position: relative;
+    right: auto;
+    top: auto;
+    bottom: auto;
+    width: 120px;
+    height: 120px;
+    display: none;
+    vertical-align: top;
+  }
+
+  #de-container-standby .standby-cta-container.mobile {
+    display: inline-block;
+    width: 110px;
+    height: 110px;
+    margin: 3%;
+  }
+
+  #de-container-standby .standby-cta {
+    display: block;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
   }
 }

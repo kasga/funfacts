@@ -1,0 +1,106 @@
+{
+	"bath": {
+		"title": "Se hvilke landsdele der tager de længste bade?",
+		"url": "http://www.dongenergy.dk",
+		"btn": "Kender du dit vandforbrug",
+		"bubbles": [{
+			"region": "Nordjylland",
+			"number": "5-10",
+			"format": "min",
+			"lead": false
+		}, {
+			"region": "Midtjylland",
+			"number": "5-10",
+			"format": "min",
+			"lead": false
+		}, {
+			"region": "Sønderjylland",
+			"number": "2-5",
+			"format": "min",
+			"lead": false
+		}, {
+			"region": "Hovedstaden",
+			"number": "5-10",
+			"format": "min",
+			"lead": true
+		}, {
+			"region": "Sjælland",
+			"number": "2-5",
+			"format": "min",
+			"lead": false
+		}, {
+			"region": "Bornholm",
+			"number": "5-10",
+			"format": "min",
+			"lead": false
+		}]
+	},
+
+	"food": {
+		"url": "http://www.dongenergy.dk",
+		"btn": "Lorem ipsum dolores",
+		"title": "Har dit TV en plads ved middagsbordet?",
+		"number": "26",
+		"format": "%",
+		"description": "af Nordjyderne har en ekstra gæst med ved middagsbordet. Her er TVet ofte eller altid tændt, mens de spiser.dk"
+	},
+
+	"livingroom": {
+		"title": "Hvem har de varmeste stuer i Danmark?",
+		"url": "http://www.dongenergy.dk",
+		"btn": "Lorem ipsum dolores",
+		"temperature": [{
+			"region": "Sjælland",
+			"number": "21.1"
+		}, {
+			"region": "Nordjylland",
+			"number": "21.0"
+		}, {
+			"region": "Midtjylland",
+			"number": "21.0"
+		}, {
+			"region": "Syddanmark",
+			"number": "20.9"
+		}, {
+			"region": "Hovedstaden",
+			"number": "20.8"
+		}]
+	},
+
+	"standby": {
+		"title": "42 % af alle danskere glemmer at slukke for deres standby apperater",
+		"url": "http://www.dongenergy.dk",
+		"btn": "Kender du dit vandforbrug",
+		"bubbles": [{
+			"region": "Nordjylland",
+			"number": "40",
+			"format": "%"
+		}, {
+			"region": "Midtjylland",
+			"number": "57",
+			"format": "%"
+		}, {
+			"region": "Sønderjylland",
+			"number": "20",
+			"format": "%"
+		}, {
+			"region": "Fyn",
+			"number": "75",
+			"format": "%"
+		}, {
+			"region": "Sjælland",
+			"number": "37",
+			"format": "%"
+		}, {
+			"region": "Hovedstaden",
+			"number": "65",
+			"format": "%",
+			"lead": true
+		}, {
+			"region": "Bornholm",
+			"number": "65",
+			"format": "%",
+			"lead": false
+		}]
+	}
+}

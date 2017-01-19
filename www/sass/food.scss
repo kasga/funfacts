@@ -1,13 +1,4 @@
 #de-container-food{
-
-	padding-bottom: 7%;
-
-	h1{
-		width: 100%;
-		text-align: center;
-		padding: 7% 4%;
-	}	
-
 	.dish{
 		position:relative;
 		text-align: center;
@@ -30,7 +21,7 @@
 
 			.food-bubble{
 				position:absolute;
-				top:-30px;
+				top:0px;
 				right:-160px;
 				width:150px;
 				opacity: 0;
@@ -42,14 +33,15 @@
 
 				.dotted-line{
 					position:absolute;
+					overflow: hidden;
 					left:-210px;
-					top:100px;
+					top:85px;
 					stroke:black;
 					stroke-width:3px;
 					stroke-dasharray:0 10px;
 					animation: DOTTED_LINE 10s linear infinite;
 					z-index: 0;
-					transform:rotate(-215deg);
+					transform:rotate(-205deg);
 				}
 
 				.circle{
@@ -81,7 +73,7 @@
 		}
 	}
 
-	#food-cta{
+	.food-cta{
 		position: relative;
 		display: none;
 		width: 100%;
@@ -104,10 +96,10 @@
 		}
 	}
 
-	#food-cta-container{
+	.food-cta-container{
 		position:absolute;
 		display:block;
-		bottom: 20px;
+		top: 10px;
 		right:10px;
 		width:130px;
 		height:130px;
@@ -118,3 +110,96 @@
 		}
 	}
 }
+
+
+
+
+
+
+/* TABLET */
+
+@media only screen 
+  and (min-device-width: 768px)
+  and (max-device-width: 1024px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  	#de-container-food{
+  		.dish{
+  			.dish-container{
+  				.food-bubble{
+		  			right:-100px;
+		  			top:-80px;
+
+		  			.dotted-line{
+		  				left:-190px;
+		  				top:125px;
+		  				transform: rotate(-230deg);
+		  			}
+		  		}	
+  			}
+  		}
+  	}
+}
+
+
+/* MOBILE */
+@media only screen 
+  and (max-device-width: 767px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  	#de-container-food{
+  		;
+		.dish{
+			margin-top: 8%;
+
+			.dish-container{
+				.dish-img{
+					opacity: 1;
+					height: 250px;
+					margin-left:0;
+				}
+
+				.food-bubble{
+					position:relative;
+					opacity: 1;
+					right:auto;
+					top:auto;
+					width:100%;
+					padding:7%;
+
+					.dotted-line{
+						display: none;
+					}
+
+					.pct{
+						display:none;
+					}
+
+					.desc{
+						text-align: center;
+					}
+					.pct-mobile{
+						font-family: 'FelbridgeDONGEnergyW01-Bd', Arial, Helvetica, sans-serif; 
+						font-size: 2rem;
+					}
+				}
+			} 
+		} 
+
+		
+		.food-cta-container.mobile{
+			width:120px;
+			height:120px;
+			top:-30px;
+
+			.food-cta{
+				display: block;
+				opacity: 1;
+			}
+
+		}
+
+
+  	}
+}
+

@@ -13,6 +13,15 @@
 	margin: 0 auto;
 	height: 550px;
 	overflow:hidden;
+	background-color: #eaeaea;
+
+	h1{
+		width:100%;
+		font-size: 2.6rem;
+		line-height: 3rem;
+		text-align: left;
+		padding:0;
+	}
 
 	#bath-draggable-bounds{
 		position:absolute;
@@ -27,7 +36,7 @@
 	#bath-you{
 		position:absolute;
 		display: block;
-		bottom:10px;
+		top:10px;
 		right:10px;
 		width:130px;
 		height:130px;
@@ -65,7 +74,26 @@
 			background-color: #C30F10;
 			height: 100%;
 
-			.arrow-circle{
+			&.indicator{
+				animation-duration: 1s;
+				animation-name: BATH_DRAG_INDICATOR;
+				animation-iteration-count: infinite;
+				animation-direction: alternate;
+				animation-timing-function: ease-in-out;
+			}
+		}
+
+		.bath-dragger{
+			position: absolute;
+			display: block;
+			width: 160px;
+			height: 100%;
+			right:-80px;
+		}
+	}
+
+
+	.arrow-circle{
 				position:absolute;
 				right:-31px;
 				top:calc(50% - 62px);
@@ -103,16 +131,11 @@
 				&.hover{
 					transform: scale(1.2, 1.2);
 				}
-			}
 
-			&.indicator{
-				animation-duration: 1s;
-				animation-name: BATH_DRAG_INDICATOR;
-				animation-iteration-count: infinite;
-				animation-direction: alternate;
-				animation-timing-function: ease-in-out;
+				&.mobile{
+					display:none;
+				}
 			}
-		}
 
 		.bath-content{
 			position: absolute;
@@ -123,15 +146,6 @@
 			padding:10%;
 			line-height: 3rem;
 		}
-
-		.bath-dragger{
-			position: absolute;
-			display: block;
-			width: 160px;
-			height: 100%;
-			right:-80px;
-		}
-	}
 
 	#bath-video{
 		position:absolute;
@@ -156,6 +170,10 @@
 	}
 
 
+	.arrow-circle.back{
+		display:none;
+	}
+
 
 	#bath-bubbles{
 		position: relative;
@@ -176,6 +194,7 @@
 				position:absolute;
 				left:0;
 				top:0;
+				overflow: hidden;
 				stroke:white;
 				stroke-width:3px;
 				stroke-dasharray:0 10px;
@@ -196,12 +215,12 @@
 
 			&.large{
 				.dotted-line{
-					stroke:#007E93;
+					stroke:#A6B11F;
 				}
 				.circle{
 					animation: CIRCLE_PULSING 1.5s ease-in-out infinite;
 					transform: scale(1.4, 1.4);
-					background-color:#007E93;
+					background-color:#A6B11F;
 				}
 
 				.region, .time{
@@ -213,7 +232,7 @@
 				}
 			}
 
-			&.b1{
+			&.b0{
 				top:50px;
 				left:100px;
 				
@@ -225,7 +244,7 @@
 				
 			}
 
-			&.b2{
+			&.b1{
 				top:200px;
 				left:0px;
 				
@@ -237,7 +256,7 @@
 				
 			}
 
-			&.b3{
+			&.b2{
 				top:360px;
 				left:0px;
 				
@@ -249,7 +268,7 @@
 				
 			}
 
-			&.b4{
+			&.b3{
 				top:50px;
 				right:70px;
 				
@@ -261,7 +280,7 @@
 				
 			}
 
-			&.b5{
+			&.b4{
 				top:200px;
 				right:0px;
 				
@@ -273,7 +292,7 @@
 				
 			}
 
-			&.b6{
+			&.b5{
 				top:360px;
 				right:0px;
 				
@@ -322,4 +341,128 @@
 	}
 }	
 
+
+
+
+@media only screen 
+  and (max-device-width: 767px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+
+
+	#de-container-bath{
+
+		height: 100vh;
+		background: url(images/bath.jpg) center center no-repeat;
+		background-size: cover;
+
+	  	h1{
+	  		font-size: 2rem;
+	  		line-height: 2.2rem;
+	  	}
+
+	  	#bath-draggable-bounds{
+	  		left: -100vw;
+	  		width: 200vw;
+
+	  	}
+
+	  	.bath-container{
+			left:50%;
+			width:50%;
+			.bath-red-box{
+
+				.arrow-circle{
+					position:relative;
+				}
+
+				.desktop{
+					display:none;
+				}
+			}
+
+			.bath-content{
+
+				top:50%;
+				left:3%;
+
+				.mobile{
+					position:relative;
+					display: block;
+					left:0;
+					top:0;
+					margin-top: 20px;
+					transform: rotate(180deg);
+				}
+			}
+		}
+
+		#bath-you{
+			width:120px;
+			height:120px;
+		}
+
+		#bath-bubbles{
+			width:100%;
+			height:100vh;
+			margin-top:0;
+
+			.circle{
+				transform: scale(1.3, 1.3);
+			}
+
+			.bath-bubble{
+				&.b0{
+					top:6%;
+					left:8%;
+				}	
+				&.b1{
+					top:34%;
+					left:8%;
+				}	
+				&.b2{
+					top:62%;
+					left:8%;
+				}	
+				&.b3{
+					top:6%;
+					right:8%;
+				}	
+				&.b4{
+					top:34%;
+					right:8%;
+				}	
+				&.b5{
+					top:62%;
+					right:8%;
+				}
+
+				.dotted-line{
+					display: none;
+				}
+
+
+				&.large{
+
+					.circle{
+						animation:0;
+						transform: scale(1.3, 1.3);
+					}
+				}	
+			}
+			
+		}
+
+		.arrow-circle.back{
+			position: absolute;
+			display: block;
+			top:auto;
+			bottom:4vw;
+			left:4vw;
+			background-color: #C30F10;
+			transform: scale(.9, .9) rotate(180deg);
+		}
+	}
+
+}
 

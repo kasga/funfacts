@@ -1,0 +1,336 @@
+
+
+#de-container-standby{
+
+	position:relative;
+	display: block;
+	max-width: 966px;
+	margin: 0 auto;
+	min-height: 600px;
+	overflow:hidden;
+
+	#standby-icon{
+		margin-top: -40px;
+		text-align: center;
+		animation-duration: 2s;
+		animation-name: PULSATE;
+		animation-iteration-count: infinite;
+		animation-direction: normal;
+		animation-timing-function: ease-in-out;
+
+	}
+
+	h1{
+		margin-top: -150px;
+		width:100%;
+	}	
+
+	#denmark{
+		position:relative;
+		width: 341px;
+		height: 430px;
+		margin: 50px auto;
+
+		.standby-bubble{
+			position:absolute;
+			display: none;
+			opacity: 0;
+			&.show{
+				display:block;
+				animation: TRANSITION_CIRCLES 1s cubic-bezier(0.175, 0.885, 0.320, 1.275) normal forwards;
+			}
+
+			.lightning{
+				margin-top: -13px;
+				margin-bottom:5px;
+				svg{
+					fill:#FFc000;
+					width:18px;
+				}
+			}
+
+			.region{
+				padding: 0 10px 0 10px;
+				
+				font-size: .6rem;
+				text-transform: uppercase;
+				font-family: 'FelbridgeDONGEnergyW01-XBd', Arial, Helvetica, sans-serif;
+				text-align: center;
+			}
+
+			.pct{
+				font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif;
+				font-weight: normal;
+				font-size: 2rem;
+				margin-top: 4px;
+			}
+
+
+			.dotted-line{
+				position:absolute;
+				left:0;
+				top:0;
+				overflow: hidden;
+				stroke:#A6B11F;
+				stroke-width:3px;
+				stroke-dasharray:0 10px;
+				animation: DOTTED_LINE 10s linear infinite;
+				z-index: 0;
+			}
+
+			.circle{
+				position: relative;
+				width:110px;
+				height:110px;
+				border-radius: 110px;
+				background-color: #A6B11F;
+				text-align: center;
+				padding: 25px 0;
+				z-index: 10;
+				color:white;
+			}
+
+			&.b0{
+				top:-50px;
+				left:-100px;
+				
+				.dotted-line{
+					transform:rotate(35deg);
+					left:30px;
+					top:100px;
+				}
+				
+			}
+
+			&.b1{
+				top:90px;
+				left:-170px;
+				
+				.dotted-line{
+					transform:rotate(5deg);
+					left:80px;
+					top:60px;
+				}
+				
+			}
+
+			&.b2{
+				top:230px;
+				left:-140px;
+				
+				.dotted-line{
+					transform:rotate(-10deg);
+					left:40px;
+					top:35px;
+				}
+				
+			}
+
+			&.b3{
+				top:350px;
+				left:120px;
+				.dotted-line{
+					transform:rotate(-104deg);
+					left:-25px;
+					top:-30px;
+				}
+				
+			}
+
+			&.b4{
+				top:230px;
+				left:320px;
+				.dotted-line{
+					transform:rotate(-165deg);
+					left:-90px;
+					top:-5px;
+				}
+				
+			}
+
+			&.b5{
+				top:90px;
+				left:370px;
+				.dotted-line{
+					transform:rotate(-210deg);
+					left:-110px;
+					top:60px;
+				}
+				
+			}
+
+			&.b6{
+				top:-50px;
+				left:370px;
+				.dotted-line{
+					transform:rotate(-204deg);
+					left:-70px;
+					top:25px;
+				}
+				
+			}
+		}
+
+
+	}
+
+	.standby-cta{
+		position:absolute;
+		display: none;
+		top:0px;
+		left:0px;
+		width:130px;
+		height:130px;
+		border-radius: 130px;
+		padding:20px 10px 10px 10px;
+		color:white;
+		z-index: 110;
+		background-color: #0E98AE;
+		text-align: center;
+		line-height: 1.2rem;
+		font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif; 
+		text-decoration: none;
+		transition: all 200ms ease-out;
+
+		&:hover{
+			transform: scale(1.05, 1.05);
+		}
+
+		&.init-btn{
+			display:block;
+			animation: SCALE_UP 250ms cubic-bezier(0.175, 0.885, 0.320, 1.275) forwards;
+		}
+
+		
+	}
+
+	.standby-cta-container{
+		position:absolute;
+		display:block;
+		top: 20px;
+		right:20px;
+		width:130px;
+		height:130px;
+		z-index: 10;
+		transition: transform 200ms ease-out !important;
+
+		&:hover{
+			transform: scale(1.05, 1.05) ;
+		}
+
+		&.mobile{
+			display:none;
+		}
+	}
+	
+}	
+
+
+
+
+
+
+
+
+
+
+
+@media only screen 
+  and (max-device-width: 767px)
+  and (-webkit-min-device-pixel-ratio: 2) {
+
+  	#de-container-standby{
+  		
+  		#standby-icon{
+  			margin-top: -60px;
+  		}
+
+  		h1{
+  			margin-top: -130px;
+  			padding-bottom:0;
+  		}
+
+
+
+  		#denmark{
+  			margin: 0 auto;
+  			text-align: center;
+  			width:100%;
+  			height:100%;
+  			padding:7%;
+  			text-align: center;
+
+  			img{
+  				width: 50%;
+  				height:auto;
+  				display:none;
+  			}
+
+  			.standby-bubble{
+  				position: relative;
+  				top:auto !important;
+  				left:auto !important;
+  				right:auto !important;
+  				bottom:auto !important;
+				display: inline-block;
+				opacity: 1;
+				width:110px;
+				margin:3%;
+
+				.lightning{
+					
+				}
+
+				.region{
+					padding: 0 10px 0 10px;
+					
+					font-size: .6rem;
+					text-transform: uppercase;
+					font-family: 'FelbridgeDONGEnergyW01-XBd', Arial, Helvetica, sans-serif;
+					text-align: center;
+				}
+
+				.pct{
+					font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif;
+					font-weight: normal;
+					font-size: 2rem;
+					margin-top: 4px;
+				}
+
+
+				.dotted-line{
+					display: none;
+				}
+			}
+  		}
+
+  		.standby-cta-container{
+  			position: relative;
+  			right:auto;
+  			top:auto;
+  			bottom:auto;
+  			width:120px;
+  			height:120px;
+  			display:none;
+  			vertical-align: top;
+
+  			&.mobile{
+				display:inline-block;
+				width:110px;
+				height:110px;
+				margin:3%;
+			}
+  		}
+
+  		.standby-cta{
+			display:block;
+			width:100%;
+			height:100%;
+			opacity: 1;
+		}
+
+		
+  	}
+}
+
+
