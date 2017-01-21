@@ -1,14 +1,6 @@
-var w;
-var h;
-var isMobile = false;
-
 function initMobile() {
-	var w = $(window).outerWidth();
-	var h = $(window).outerHeight();
 
-	if (w < 768) {
-		isMobile = true;
-
+	if (isMobile) {
 		// Init sections
 		initMobileFood();
 		initMobileBath();

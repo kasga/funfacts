@@ -74,7 +74,7 @@
 				stroke:#A6B11F;
 				stroke-width:3px;
 				stroke-dasharray:0 10px;
-				animation: DOTTED_LINE 10s linear infinite;
+				animation: DOTTED_LINE 20s linear infinite;
 				z-index: 0;
 			}
 
@@ -88,6 +88,10 @@
 				padding: 25px 0;
 				z-index: 10;
 				color:white;
+
+				svg{
+					height:18px;
+				}
 			}
 
 			&.b0{

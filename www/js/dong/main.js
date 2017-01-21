@@ -1,3 +1,7 @@
+var w;
+var h;
+var isMobile = false;
+
 var bathRedBox;
 var bathLeftBox;
 var arrowGfx;
@@ -13,6 +17,10 @@ var foodFormat;
 
 
 $(document).ready(function() {
+	w = $(window).outerWidth();
+	h = $(window).outerHeight();
+	if (w < 768) isMobile = true;
+
 	loadData();
 });
 
@@ -82,26 +90,49 @@ function bathInit() {
 	videoElement = $('#bath-video');
 	videoX = videoElement.css('left').replace(/[^-\d\.]/g, '');
 
+
+
 	// Dragger indicator loop
-	var bathDragger = new Draggable("#bath-left-box", {
-		type: "x,y",
-		edgeResistance: 1,
-		bounds: "#bath-draggable-bounds",
-		lockAxis: true,
-		throwProps: false,
-		onPress: function() {
-			bathStartDrag(this);
-		},
-		onRelease: function() {
+	if (!isMobile) {
+		var bathDragger = new Draggable("#bath-left-box", {
+			type: "x,y",
+			edgeResistance: 1,
+			bounds: "#bath-draggable-bounds",
+			lockAxis: true,
+			throwProps: false,
+			onPress: function() {
+				bathStartDrag(this);
+			},
+			onRelease: function() {
+				bathRelease(this);
+			},
+			onDrag: function() {
+				bathDrag(this);
+			},
+			onDragEnd: function() {
+				bathDragEnd();
+			}
+		});
+	} else {
+		var bathDragger = new Draggable("#arrow-circle-mobile", {
+			type: "x",
+			edgeResistance: 1,
+			bounds: "#bath-draggable-bounds",
+			lockAxis: true,
+			throwProps: false,
+			onPress: function() {
+				bathStartDrag(this);
+			},
+			onRelease: function() {
+				bathRelease(this);
+			}
+		});
+
+		$('.arrow-circle.back').on('click', function() {
 			bathRelease(this);
-		},
-		onDrag: function() {
-			bathDrag(this);
-		},
-		onDragEnd: function() {
-			bathDragEnd();
-		}
-	});
+		});
+	}
+
 
 	// Arrow indicator
 	$('.bath-dragger').on('mouseover', function(event) {
@@ -135,6 +166,14 @@ function bathRelease(el) {
 	} else {
 		$('#bath-you').removeClass('hide');
 		redLayerOut(el, maxX);
+	}
+
+	if (isMobile && bathLeftBoxState == 'out') {
+		setTimeout(function() {
+			$('.arrow-circle.back').addClass('show');
+		}, 250);
+	} else if (isMobile && bathLeftBoxState == 'in') {
+		$('.arrow-circle.back').removeClass('show');
 	}
 }
 
@@ -180,6 +219,8 @@ function bathDragEnd() {
 		})
 	}
 }
+
+
 
 function moveVideo(el) {
 	var currentVidX = bathLeftBox.position().left;
