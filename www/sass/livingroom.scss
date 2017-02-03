@@ -47,7 +47,7 @@
 		width:130px;
 		height:130px;
 		border-radius: 130px;
-		padding:20px 10px 10px 10px;
+		padding:10px 10px 10px 10px;
 		color:white;
 		z-index: 110;
 		background-color: #0E98AE;
@@ -96,7 +96,7 @@
 		.temp{
 			position: absolute;
 			display: block;
-			left:50px;
+			left:100px;
 			width:auto;
 
 			.red-bold{
@@ -109,14 +109,14 @@
 			&.t2{ top: 103px;}
 			&.t3{ top: 131px;}
 			&.t4{ top: 159px;}
-
+			
 			.dotted-line{
 				stroke:black;
 				stroke-width:3px;
 				overflow: hidden;
 				stroke-dasharray:0 10px;
 				transform: rotate(180deg);
-				animation: DOTTED_LINE 20s linear infinite;
+				animation: DOTTED_LINE 30s linear infinite;
 				margin-right: 10px;
 			}
 		}
@@ -132,17 +132,16 @@
 
 
 @media only screen 
-  and (max-device-width: 767px)
-  and (-webkit-min-device-pixel-ratio: 2) {
+  and (max-device-width: 767px) {
 
   	#de-container-livingroom{
-  		height: 100vh;
+  		height: 600px;
   		min-height: auto;
 
   		.livingroom-bg{
   			top:0;
   			left: -160px;
-  			height:100vh;
+  			height:600px;
   			overflow: hidden;
 
   			img{

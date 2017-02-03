@@ -1,106 +1,92 @@
 {
 	"bath": {
-		"title": "Se hvilke landsdele der tager de længste bade?",
-		"url": "http://www.dongenergy.dk",
-		"btn": "Kender du dit vandforbrug",
+		"title": "Hvor mange af os tager bad, der varer længere end 10 minutter?",
+		"url": "https://www.dongenergy.dk/privat/f%c3%a5-en-lavere-energiregning/tjek-dit-energiforbrug/test-dine-energivaner",
+		"btn": "Tag selv energitesten her",
 		"bubbles": [{
-			"region": "Nordjylland",
-			"number": "5-10",
-			"format": "min",
+			"region": "Hovedstaden",
+			"number": "12",
+			"format": "%",
 			"lead": false
 		}, {
 			"region": "Midtjylland",
-			"number": "5-10",
-			"format": "min",
+			"number": "11",
+			"format": "%",
 			"lead": false
 		}, {
-			"region": "Sønderjylland",
-			"number": "2-5",
-			"format": "min",
+			"region": "Region Syd",
+			"number": "11",
+			"format": "%",
 			"lead": false
 		}, {
-			"region": "Hovedstaden",
-			"number": "5-10",
-			"format": "min",
+			"region": "Nordjylland",
+			"number": "18",
+			"format": "%",
 			"lead": true
 		}, {
 			"region": "Sjælland",
-			"number": "2-5",
-			"format": "min",
-			"lead": false
-		}, {
-			"region": "Bornholm",
-			"number": "5-10",
-			"format": "min",
+			"number": "8",
+			"format": "%",
 			"lead": false
 		}]
 	},
 
 	"food": {
-		"url": "http://www.dongenergy.dk",
-		"btn": "Lorem ipsum dolores",
-		"title": "Har dit TV en plads ved middagsbordet?",
-		"number": "26",
+		"url": "https://www.dongenergy.dk/privat/f%c3%a5-en-lavere-energiregning/tjek-dit-energiforbrug/test-dine-energivaner",
+		"btn": "Find ud af, om du har noget at spare",
+		"title": "Har dit tv en plads ved middagsbordet?",
+		"number": "27",
 		"format": "%",
-		"description": "af Nordjyderne har en ekstra gæst med ved middagsbordet. Her er TVet ofte eller altid tændt, mens de spiser.dk"
+		"description": "af midtjyderne har en ekstra gæst med ved middagsbordet. Her er tv'et ofte eller altid tændt, mens de spiser. På Sjælland (uden for København) er det kun 22 %."
 	},
 
 	"livingroom": {
 		"title": "Hvem har de varmeste stuer i Danmark?",
-		"url": "http://www.dongenergy.dk",
-		"btn": "Lorem ipsum dolores",
+		"url": "https://www.dongenergy.dk/privat/f%c3%a5-en-lavere-energiregning/tjek-dit-energiforbrug/test-dine-energivaner",
+		"btn": "Tag vores energitest",
 		"temperature": [{
 			"region": "Sjælland",
-			"number": "21.1"
+			"number": "21,1"
 		}, {
 			"region": "Nordjylland",
-			"number": "21.0"
+			"number": "21,0"
 		}, {
 			"region": "Midtjylland",
-			"number": "21.0"
+			"number": "21,0"
 		}, {
 			"region": "Syddanmark",
-			"number": "20.9"
+			"number": "20,9"
 		}, {
 			"region": "Hovedstaden",
-			"number": "20.8"
+			"number": "20,8"
 		}]
 	},
 
 	"standby": {
-		"title": "42 % af alle danskere glemmer at slukke for deres standby apperater",
+		"title": "42 % af alle danskere glemmer at slukke for apparater på standby.",
 		"url": "http://www.dongenergy.dk",
-		"btn": "Kender du dit vandforbrug",
+		"btn": "Tag stand-by-testen, og spar penge",
 		"bubbles": [{
 			"region": "Nordjylland",
-			"number": "40",
+			"number": "48",
 			"format": "%"
 		}, {
 			"region": "Midtjylland",
-			"number": "57",
+			"number": "46",
 			"format": "%"
 		}, {
-			"region": "Sønderjylland",
-			"number": "20",
-			"format": "%"
-		}, {
-			"region": "Fyn",
-			"number": "75",
+			"region": "Region Syd",
+			"number": "39",
 			"format": "%"
 		}, {
 			"region": "Sjælland",
-			"number": "37",
+			"number": "40",
 			"format": "%"
 		}, {
 			"region": "Hovedstaden",
-			"number": "65",
+			"number": "37",
 			"format": "%",
 			"lead": true
-		}, {
-			"region": "Bornholm",
-			"number": "65",
-			"format": "%",
-			"lead": false
 		}]
 	}
 }

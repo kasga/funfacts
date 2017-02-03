@@ -130,18 +130,8 @@
 				
 			}
 
+			
 			&.b3{
-				top:350px;
-				left:120px;
-				.dotted-line{
-					transform:rotate(-104deg);
-					left:-25px;
-					top:-30px;
-				}
-				
-			}
-
-			&.b4{
 				top:230px;
 				left:320px;
 				.dotted-line{
@@ -152,7 +142,7 @@
 				
 			}
 
-			&.b5{
+			&.b4{
 				top:90px;
 				left:370px;
 				.dotted-line{
@@ -186,7 +176,7 @@
 		width:130px;
 		height:130px;
 		border-radius: 130px;
-		padding:20px 10px 10px 10px;
+		padding:10px 10px 10px 10px;
 		color:white;
 		z-index: 110;
 		background-color: #0E98AE;
@@ -244,6 +234,8 @@
   and (-webkit-min-device-pixel-ratio: 2) {
 
   	#de-container-standby{
+
+  		height:830px;
   		
   		#standby-icon{
   			margin-top: -60px;
