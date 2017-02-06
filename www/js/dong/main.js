@@ -276,10 +276,10 @@ function initFoodCTA() {
 
 //LIVING ROOM
 function initLivingRoom() {
-    
-        var video = document.getElementById('livingroom-video');
-        video.play()
-        setInterval(initLivingroomCTA, 1000);
+
+    var video = document.getElementById('livingroom-video');
+    video.play()
+    setInterval(initLivingroomCTA, 1000);
 }
 
 
@@ -343,7 +343,7 @@ function iframeCommunicator() {
 // COMMUNICATING WITH PARENT
 function DongEnergyMessage(event) {
 
-	if (event.data == 'food' && !isMobile) initFood();
+    if (event.data == 'food' && !isMobile) initFood();
     else if (event.data == 'livingroom') initLivingRoom();
     else if (event.data == 'standby' && !isMobile) initStandby();
 
@@ -351,3 +351,19 @@ function DongEnergyMessage(event) {
 }
 
 window.addEventListener("message", DongEnergyMessage, false);
+
+
+
+
+
+
+
+var trackOutboundLink = function(url) {
+   ga('send', 'event', 'Funfacts - Knap', 'Klik', 'Energitest 2', url, {
+     'transport': 'beacon',
+     'hitCallback': function(){document.location = url;}
+   });
+} 
+
+
+

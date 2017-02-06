@@ -41,4 +41,4 @@ $(".bath-red-box").removeClass("indicator")}function initMobileFood(){$(".pct-mo
 // Removes the video from the mark up
 $("#livingroom-video").remove()}var w,h,isMobile=!1,bathRedBox,bathLeftBox,arrowGfx,videoElement,videoX,bathLeftBoxState="in",rootURL="",dataURL=rootURL+"data.json",foodNum,foodFormat;$(document).ready(function(){w=$(window).outerWidth(),h=$(window).outerHeight(),w<768&&(isMobile=!0),loadData()});
 // FOOD
-var pct={num:0};window.addEventListener("message",DongEnergyMessage,!1);
+var pct={num:0};window.addEventListener("message",DongEnergyMessage,!1);var trackOutboundLink=function(o){ga("send","event","Funfacts - Knap","Klik","Energitest 2",o,{transport:"beacon",hitCallback:function(){document.location=o}})};
