@@ -9,8 +9,8 @@ var videoElement;
 var videoX;
 var bathLeftBoxState = "in";
 //var rootURL = "https://de-kampagne.dk/funfacts/";
-var rootURL = "";
-var dataURL = rootURL + "data.json";
+var rootURL = "http://de-test-cm.westeurope.cloudapp.azure.com/-/media/Dong%20Energy/Assets/DCS/Projects/Fun%20Facts/data";
+var dataURL = rootURL;
 
 // Food
 var foodNum;
@@ -23,6 +23,7 @@ var foodFormat;
 $(document).ready(function() {
     w = $(window).outerWidth();
     h = $(window).outerHeight();
+
     if (w < 768) isMobile = true;
 
 
@@ -40,7 +41,6 @@ function loadData() {
 
 
 function handleData(data) {
-
     // HANDLEBARS
 
     // BATH
@@ -82,6 +82,32 @@ function handleData(data) {
 
     //Window resize
     resizeWindow();
+
+
+    var waypoint = new Waypoint({
+      element: document.getElementById('de-container-food'),
+      handler: function(direction) {
+        initFood();
+      },
+      offset: 300 
+    });
+
+    var waypoint = new Waypoint({
+      element: document.getElementById('de-container-standby'),
+      handler: function(direction) {
+        initStandby();
+      },
+      offset: 300 
+    });
+
+    var waypoint = new Waypoint({
+      element: document.getElementById('de-container-livingroom'),
+      handler: function(direction) {
+        initLivingRoom();
+      },
+      offset: 300 
+    });
+
 }
 
 
@@ -94,6 +120,7 @@ function bathInit() {
     arrowGfx = $('.arrow-gfx');
     videoElement = $('#bath-video');
     videoX = videoElement.css('left').replace(/[^-\d\.]/g, '');
+
 
 
 
@@ -358,12 +385,6 @@ window.addEventListener("message", DongEnergyMessage, false);
 
 
 
-var trackOutboundLink = function(url) {
-   ga('send', 'event', 'Funfacts - Knap', 'Klik', 'Energitest 2', url, {
-     'transport': 'beacon',
-     'hitCallback': function(){document.location = url;}
-   });
-} 
 
 
 

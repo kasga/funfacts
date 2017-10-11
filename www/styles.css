@@ -171,8 +171,8 @@ table {
 }
 
 #de-container-bath {
-  position: relative;
-  display: block;
+  position: relative !important;
+  display: block !important;
   max-width: 966px;
   margin: 0 auto;
   height: 550px;
@@ -186,6 +186,7 @@ table {
   line-height: 3rem;
   text-align: left;
   padding: 0;
+  font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif !important;
 }
 
 #de-container-bath #bath-draggable-bounds {
@@ -971,14 +972,17 @@ body {
   font-family: 'FelbridgeDONGEnergyW01-Rg', Arial, Helvetica, sans-serif;
   font-size: 16px;
   box-sizing: border-box;
-  opacity: 0;
-  animation: INIT_PAGE 1s normal forwards;
+  opacity: 1;
 }
 
 *,
 *:before,
 *:after {
   box-sizing: inherit;
+}
+
+.row>[class*='col'] {
+  display: block !important;
 }
 
 h1 {

@@ -2,8 +2,8 @@ body{
 	font-family: 'FelbridgeDONGEnergyW01-Rg', Arial, Helvetica, sans-serif;
 	font-size: 16px;
 	box-sizing: border-box;
-	opacity:0;
-	animation: INIT_PAGE 1s normal forwards;
+	opacity:1;
+	//animation: INIT_PAGE 1s normal forwards;
 
 	
 }
@@ -11,6 +11,10 @@ body{
 
 *, *:before, *:after {
 	box-sizing: inherit;
+}
+
+.row > [class*='col']{
+  display:block !important;
 }
 
 

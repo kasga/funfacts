@@ -7,8 +7,8 @@
 }
 
 #de-container-bath{
-	position:relative;
-	display: block;
+	position:relative !important;
+	display: block !important;
 	max-width: 966px;
 	margin: 0 auto;
 	height: 550px;
@@ -21,6 +21,7 @@
 		line-height: 3rem;
 		text-align: left;
 		padding:0;
+		font-family: 'FelbridgeDONGEnergyW01-lt', Arial, Helvetica, sans-serif !important; 
 	}
 
 	#bath-draggable-bounds{
